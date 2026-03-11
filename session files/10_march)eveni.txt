@@ -1,0 +1,357 @@
+
+Lenovo@Akshatha MINGW64 /f/web_app_git
+$ # view all the files and folders in the current working directory
+
+Lenovo@Akshatha MINGW64 /f/web_app_git
+$ ls
+index.txt
+
+Lenovo@Akshatha MINGW64 /f/web_app_git
+$ # read the file-by using cat command
+
+Lenovo@Akshatha MINGW64 /f/web_app_git
+$ cat index.txt
+this is the first line
+
+Lenovo@Akshatha MINGW64 /f/web_app_git
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+Lenovo@Akshatha MINGW64 /f/web_app_git
+$ # initalize the local server-- git--local repo
+
+Lenovo@Akshatha MINGW64 /f/web_app_git
+$ git init -b main
+Initialized empty Git repository in F:/web_app_git/.git/
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ # step 2 : configure the user details
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git config --global user.name "jsakshatha"
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git config --global user.email "jsakshatha@gmail.com"
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git add index.txt
+warning: in the working copy of 'index.txt', LF will be replaced by CRLF the next time Git touches it
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.txt
+
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git commit -m "new file created and my first commit"
+[main (root-commit) d30a9f3] new file created and my first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index.txt
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git remote add origin https://github.com/jsakshatha/git_web_app.git
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git push origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 245 bytes | 122.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/jsakshatha/git_web_app.git
+ * [new branch]      main -> main
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ # create a version one using tag command
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git tag
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git tag -a v1.0 -m "new file is uploaded to github"
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git tag
+v1.0
+
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ ls
+index.txt
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git branch
+* main
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git tag
+v1.0
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git log
+commit d30a9f3bf05e7fea7f393a54f3cb5675a0fe560d (HEAD -> main, tag: v1.0, origin/main)
+Author: jsakshatha <jsakshatha@gmail.com>
+Date:   Tue Mar 10 21:23:10 2026 +0530
+
+    new file created and my first commit
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ # create a new branch varsha_b1 and switch to branch 1
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git checkout -b varsha_b1
+Switched to a new branch 'varsha_b1'
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ git branch
+  main
+* varsha_b1
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ echo "line 1" >> sample.doc
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ echo "line 2" >> sample.doc
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ # read the file
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ cat sample.doc
+line 1
+line 2
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ git status
+On branch varsha_b1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        sample.doc
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ # add the file to the staging area
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ git add sample.doc
+warning: in the working copy of 'sample.doc', LF will be replaced by CRLF the next time Git touches it
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ git commit -m "first commit by branch1"
+[varsha_b1 0056a59] first commit by branch1
+ 1 file changed, 2 insertions(+)
+ create mode 100644 sample.doc
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ git push origin varsha_b1
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 291 bytes | 41.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'varsha_b1' on GitHub by visiting:
+remote:      https://github.com/jsakshatha/git_web_app/pull/new/varsha_b1
+remote:
+To https://github.com/jsakshatha/git_web_app.git
+ * [new branch]      varsha_b1 -> varsha_b1
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ git tag -a v1.1 -m "new branch added"
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ git tag
+v1.0
+v1.1
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ git push origin --tags
+Enumerating objects: 2, done.
+Counting objects: 100% (2/2), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 298 bytes | 74.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/jsakshatha/git_web_app.git
+ * [new tag]         v1.0 -> v1.0
+ * [new tag]         v1.1 -> v1.1
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ ls
+index.txt  sample.doc
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ # read the file which is created by main branch-index.txt
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ cat index.txt
+this is the first line
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ # read the file which is created by varsha_b1 branch-sample.doc
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ cat sample.doc
+line 1
+line 2
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ # let's switch to the main branch
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (varsha_b1)
+$ git checkout main
+Switched to branch 'main'
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ # read the file index.txt and also sample.doc
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ cat index.txt
+this is the first line
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ cat sample.doc
+cat: sample.doc: No such file or directory
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git merge varsha_b1
+Updating d30a9f3..0056a59
+Fast-forward
+ sample.doc | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 sample.doc
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ cat sample.doc
+line 1
+line 2
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git tag -a v1.2 -m "merged main branch and branch1"
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git push origin main
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/jsakshatha/git_web_app.git
+   d30a9f3..0056a59  main -> main
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git push origin --tags
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 168 bytes | 56.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/jsakshatha/git_web_app.git
+ * [new tag]         v1.2 -> v1.2
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ echo "updating the second line" >>index.txt
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ cat index.txt
+this is the first line
+updating the second line
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git add index.txt
+warning: in the working copy of 'index.txt', LF will be replaced by CRLF the next time Git touches it
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git commit -m "updated the file"
+[main 0292a4f] updated the file
+ 1 file changed, 1 insertion(+)
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git tag -a v1.4 -m "updated index.txt"
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 315 bytes | 45.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/jsakshatha/git_web_app.git
+   0056a59..0292a4f  main -> main
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git push origin --tags
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 163 bytes | 54.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/jsakshatha/git_web_app.git
+ * [new tag]         v1.4 -> v1.4
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git log index.txt
+commit 0292a4f683ce62668b33fba5c9818f2a61527655 (HEAD -> main, tag: v1.4, origin/main)
+Author: jsakshatha <jsakshatha@gmail.com>
+Date:   Wed Mar 11 22:05:03 2026 +0530
+
+    updated the file
+
+commit d30a9f3bf05e7fea7f393a54f3cb5675a0fe560d (tag: v1.0)
+Author: jsakshatha <jsakshatha@gmail.com>
+Date:   Tue Mar 10 21:23:10 2026 +0530
+
+    new file created and my first commit
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$ git log
+commit 0292a4f683ce62668b33fba5c9818f2a61527655 (HEAD -> main, tag: v1.4, origin/main)
+Author: jsakshatha <jsakshatha@gmail.com>
+Date:   Wed Mar 11 22:05:03 2026 +0530
+
+    updated the file
+
+commit 0056a596e3744b34fa7edd38effe6b23b0d5b2a6 (tag: v1.2, tag: v1.1, origin/varsha_b1, varsha_b1)
+Author: jsakshatha <jsakshatha@gmail.com>
+Date:   Wed Mar 11 21:10:41 2026 +0530
+
+    first commit by branch1
+
+commit d30a9f3bf05e7fea7f393a54f3cb5675a0fe560d (tag: v1.0)
+Author: jsakshatha <jsakshatha@gmail.com>
+Date:   Tue Mar 10 21:23:10 2026 +0530
+
+    new file created and my first commit
+
+Lenovo@Akshatha MINGW64 /f/web_app_git (main)
+$
+
