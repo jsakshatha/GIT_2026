@@ -1,0 +1,150 @@
+
+Lenovo@Akshatha MINGW64 /d
+$ # step 1: create new folder git_project using mkdir
+
+Lenovo@Akshatha MINGW64 /d
+$ mkdir git_project
+
+Lenovo@Akshatha MINGW64 /d
+$ # step 2: change the location/directory
+
+Lenovo@Akshatha MINGW64 /d
+$ cd git_project
+
+Lenovo@Akshatha MINGW64 /d/git_project
+$ # step 3: create new text file content.txt using echo command
+
+Lenovo@Akshatha MINGW64 /d/git_project
+$ echo "line 1 --first statement" >> content.txt
+
+Lenovo@Akshatha MINGW64 /d/git_project
+$ # verify content.txt is present or not?
+
+Lenovo@Akshatha MINGW64 /d/git_project
+$ ls
+content.txt
+
+Lenovo@Akshatha MINGW64 /d/git_project
+$ # step 4 : initialize the git repo-local server/repo
+
+Lenovo@Akshatha MINGW64 /d/git_project
+$ git init -b main
+Initialized empty Git repository in D:/git_project/.git/
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ # step 5: configuration- set the username
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ git config --global user.name "jsakshatha"
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ # step 6: configuration- set the user email
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ git config --global user.email "jsakshatha@gmail.com"
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ # step 7: check the status of git repo
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        content.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ # step 7: add the content.txt file to the staging area
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ git add content.txt
+warning: in the working copy of 'content.txt', LF will be replaced by CRLF the next time Git touches it
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ echo "line 2 --second statement" >> content.txt
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ # verify by using cat command- is used to read the file
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ cat content.txt
+line 1 --first statement
+line 2 --second statement
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   content.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   content.txt
+
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ ls
+content.txt
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ git add content.txt
+warning: in the working copy of 'content.txt', LF will be replaced by CRLF
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   content.txt
+
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ # step 10 : check the log details--who?when?
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ git log
+fatal: your current branch 'main' does not have any commits yet
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ git commit -m " created new file and added two lines"
+[main (root-commit) 2d356fa]  created new file and added two lines
+ 1 file changed, 2 insertions(+)
+ create mode 100644 content.txt
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ git log
+commit 2d356fa5254aa3b22983d7abfd7483cb8783da10 (HEAD -> main)
+Author: jsakshatha <jsakshatha@gmail.com>
+Date:   Tue Mar 31 21:51:52 2026 +0530
+
+     created new file and added two lines
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ git remote add origin "https://github.com/jsakshatha/remote_repo.git"
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$ git push origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 265 bytes | 88.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/jsakshatha/remote_repo.git
+ * [new branch]      main -> main
+
+Lenovo@Akshatha MINGW64 /d/git_project (main)
+$
