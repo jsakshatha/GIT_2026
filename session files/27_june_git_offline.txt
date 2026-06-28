@@ -512,3 +512,285 @@ b=10
 print("result",a+b)
 Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
 $
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------
+28 th june SUNDAY 2026
+--------------------------------------------------------------
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ ls
+check.doc  content.txt  test.py
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ cat test.py
+print(.... welcome to datamites)
+
+
+
+a=5
+b=10
+print("result",a+b)
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git remote -v
+origin  https://github.com/jsakshatha/PROJECT_WEEKEND.git (fe
+tch)
+origin  https://github.com/jsakshatha/PROJECT_WEEKEND.git (pu
+sh)
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git tag
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git tag -a v1.0 -m "first push,pull,merge,one branch is created"
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git tag
+v1.0
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git push origin amit_b1
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 856 bytes | 214.00 KiB/s, done.
+Total 9 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), done.
+remote:
+remote: Create a pull request for 'amit_b1' on GitHub by visiting:
+remote:      https://github.com/jsakshatha/PROJECT_WEEKEND/pull/new/amit_b
+remote:
+To https://github.com/jsakshatha/PROJECT_WEEKEND.git
+ * [new branch]      amit_b1 -> amit_b1
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git branch
+  amit_b1
+* main
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git push origin --tags
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 185 bytes | 185.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/jsakshatha/PROJECT_WEEKEND.git
+ * [new tag]         v1.0 -> v1.0
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ echo " @@@@@@@@@@@@@ creating content after tag version 1.0@@@@" >> conte
+nt.txt
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git commit -am "checking for version 2 content"
+warning: in the working copy of 'content.txt', LF will be replaced by CRLF
+the next time Git touches it
+[main 1800e45] checking for version 2 content
+ 1 file changed, 1 insertion(+)
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git checkout -b madhu_b2
+Switched to a new branch 'madhu_b2'
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (madhu_b2)
+$ echo " creating the content under b2......line 1...." >> design.txt
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (madhu_b2)
+$ git commit -am "first commit under b2"
+On branch madhu_b2
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        design.txt
+
+nothing added to commit but untracked files present (use "git add" to track
+)
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (madhu_b2)
+$ git add design.txt
+warning: in the working copy of 'design.txt', LF will be replaced by CRLF t
+he next time Git touches it
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (madhu_b2)
+$ git commit -m "first commit under b2"
+[madhu_b2 708f446] first commit under b2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 design.txt
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (madhu_b2)
+$ git status
+On branch madhu_b2
+nothing to commit, working tree clean
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (madhu_b2)
+$ git checkout main
+Switched to branch 'main'
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ cat design.txt
+cat: design.txt: No such file or directory
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git merge madhu_b2
+Updating 1800e45..708f446
+Fast-forward
+ design.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 design.txt
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ cat design.txt
+ creating the content under b2......line 1....
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git tag -a v2.0 -m "created new branch and modified content.txt"
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git push origin main
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 670 bytes | 335.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/jsakshatha/PROJECT_WEEKEND.git
+   39a5112..708f446  main -> main
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git push origin madhu_b2
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'madhu_b2' on GitHub by visiting:
+remote:      https://github.com/jsakshatha/PROJECT_WEEKEND/pull/new/madhu_b2
+remote:
+To https://github.com/jsakshatha/PROJECT_WEEKEND.git
+ * [new branch]      madhu_b2 -> madhu_b2
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git push --tags
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 185 bytes | 185.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/jsakshatha/PROJECT_WEEKEND.git
+ * [new tag]         v2.0 -> v2.0
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git pull origin main
+remote: Enumerating objects: 13, done.
+remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 12 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (12/12), 3.70 KiB | 30.00 KiB/s, done.
+From https://github.com/jsakshatha/PROJECT_WEEKEND
+ * branch            main       -> FETCH_HEAD
+   708f446..3b5b759  main       -> origin/main
+Updating 708f446..3b5b759
+Fast-forward
+ madhusudan.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
+ create mode 100644 madhusudan.txt
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git branch
+  amit_b1
+  madhu_b2
+* main
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ cat content.txt
+this is line number 1............
+ line 2...added....
+ line 3...added....
+ @@@@@@@@@@@@@ creating content after tag version 1.0@@@@
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git log content.txt
+commit 1800e45a8e4bac1dc54364ebd519442ba168b7bb
+Author: jsakshatha <jsakshatha.shettigar@gmail.com>
+Date:   Sun Jun 28 10:46:18 2026 +0530
+
+    checking for version 2 content
+
+commit a703e0742c1da6bdda644957e060eb5ef9c52f08
+Author: jsakshatha <jsakshatha.shettigar@gmail.com>
+Date:   Sat Jun 27 11:24:52 2026 +0530
+
+     modified second line
+
+commit dc507a469092b46a1c050c703b9510622aa9ee24
+Author: jsakshatha <jsakshatha.shettigar@gmail.com>
+Date:   Sat Jun 27 11:17:19 2026 +0530
+
+    created new file and added some line of code
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$ git checkout a703e0742c1da6bdda644957e060eb5ef9c52f08
+Note: switching to 'a703e0742c1da6bdda644957e060eb5ef9c52f08'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at a703e07  modified second line
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo ((a703e07...))
+$ cat content.txt
+this is line number 1............
+ line 2...added....
+ line 3...added....
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo ((a703e07...))
+$ git checkout  dc507a469092b46a1c050c703b9510622aa9ee24
+Previous HEAD position was a703e07  modified second line
+HEAD is now at dc507a4 created new file and added some line of code
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo ((dc507a4...))
+$ cat content.txt
+this is line number 1............
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo ((dc507a4...))
+$ git checkout 1800e45a8e4bac1dc54364ebd519442ba168b7bb
+Previous HEAD position was dc507a4 created new file and added some line of code
+HEAD is now at 1800e45 checking for version 2 content
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo ((1800e45...))
+$ cat content.txt
+this is line number 1............
+ line 2...added....
+ line 3...added....
+ @@@@@@@@@@@@@ creating content after tag version 1.0@@@@
+
+
+$ git checkout main
+Previous HEAD position was 1800e45 checking for version 2 content
+Switched to branch 'main'
+
+Datamites@DESKTOP-NK0VSIK MINGW64 /d/project_repo (main)
+$
